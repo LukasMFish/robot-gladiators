@@ -3,7 +3,7 @@ var playerHealth = 100;
 var playerAttack = 10;
 var playerMoney = 10;
 
-var enemyNames = ["Roborto", "Amy Trumble", "Kyle"];
+var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
 var enemyHealth = 50;
 var enemyAttack = 12;
 
@@ -70,16 +70,15 @@ for (var i = 0; i < enemyNames.length; i++) {
     if (playerHealth > 0) {
         // let the player know what round there in
         window.alert("Welcome to Robot Gladiators! Round " + (i + 1));
+        // pick new enemy based on the enemyNames array
+        var pickedEnemyName = enemyNames[i];
+        // reset enemyHealth before each round
+        enemyHealth = 50;
+        // debugger;
+        // pass the pickedEnemyName variable's value into the fight function, where it will assume the value of the enemyName parameter
+        fight(pickedEnemyName);
     } else {
         window.alert("You have lost your robot in battle! Game Over!");
         break;
     }
-
-    // pick new enemy based on the enemyNames array
-    var pickedEnemyName = enemyNames[i];
-    // reset enemyHealth before each round
-    enemyHealth = 50;
-    debugger;
-    // pass the pickedEnemyName variable's value into the fight function, where it will assume the value of the enemyName parameter
-    fight(pickedEnemyName);
 }
